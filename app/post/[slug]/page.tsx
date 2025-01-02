@@ -19,10 +19,10 @@ export async function generateStaticParams() {
 export default function PostPage({ params }: Props) {
   const posts = getAllPosts();
   const post = posts.find((p) => p.slug === params.slug);
-
+  
   if (!post) {
     notFound();
   }
-
-  return <Post post={post} />;
+  
+  return <Post post={post} />;  // Added the Post component with post prop
 }
