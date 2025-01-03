@@ -7,11 +7,11 @@ interface Params {
   slug: string;
 }
 
-export async function generateMetadata({
-  params,
-}: {
+interface PageProps {
   params: Params;
-}): Promise<Metadata> {
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
@@ -31,7 +31,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function ProjectPage({ params }: { params: Params }) {
+export default async function ProjectPage({ params }: PageProps) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
