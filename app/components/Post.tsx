@@ -5,7 +5,6 @@ import { formatDate } from '../utils/blog';
 import RelatedPosts from '../components/RelatedPosts';
 import CommentSection from '../components/CommentSection';
 import Newsletter from '../components/Newsletter';
-import { post } from '../data/post'
 
 interface PostProps {
   post: BlogPost;
@@ -38,7 +37,7 @@ const Post = ({ post, posts }: PostProps) => {
       {/* Content */}
       <div
         className="prose prose-lg my-8"
-        dangerouslySetInnerHTML={{ __html: post.content }}
+        dangerouslySetInnerHTML={{ __html: post.description }}
       />
 
       {/* Tags */}

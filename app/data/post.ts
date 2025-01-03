@@ -9,7 +9,7 @@ export const post: BlogPost[] = [
     author: 'Alec Whitten',
     date: '2024-01-01',
     excerpt: 'Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?',
-    content: `
+    description: `
       <div class="flex flex-col gap-6 text-[#c0c5d0]">
         <p class="text-base leading-normal">
           Bill Walsh's transformation of the San Francisco 49ers from the NFL's worst team to a three-time Super Bowl champion is one of sports' greatest turnaround stories. Here are the key leadership lessons we can learn from his journey.
@@ -55,7 +55,7 @@ export const post: BlogPost[] = [
       { label: 'Leadership', color: '#6840c6', bgColor: '#f9f5ff' },
       { label: 'Management', color: '#c01573', bgColor: '#fdf1f9' }
     ],
-    description: "",
+    
     image: ""
   },
   {
@@ -65,7 +65,7 @@ export const post: BlogPost[] = [
     author: 'Demi Wilkinson',
     date: '2024-01-01',
     excerpt: 'Mental models are simple expressions of complex processes or relationships.',
-    content: `
+    description: `
       <div class="flex flex-col gap-6 text-[#c0c5d0]">
         <p class="text-base leading-normal">
           Mental models are frameworks for thinking. They help us understand life's complexities and make better decisions. For Product Managers, these models are essential tools for problem-solving and decision-making.
@@ -109,7 +109,7 @@ export const post: BlogPost[] = [
       { label: 'Research', color: '#3537cc', bgColor: '#eef3ff' },
       { label: 'Frameworks', color: '#c01573', bgColor: '#fdf1f9' }
     ],
-    description: "",
+    
     image: ""
   },
   {
@@ -119,7 +119,7 @@ export const post: BlogPost[] = [
     author: 'Candice Wu',
     date: '2024-01-01',
     excerpt: 'Introduction to Wireframing and its Principles. Learn from the best in the industry.',
-    content: `
+    description: `
       <div class="flex flex-col gap-6 text-[#c0c5d0]">
         <p class="text-base leading-normal">
           Wireframing is the foundation of great UI/UX design. It's a visual guide that represents the skeletal framework of a website or application, focusing on layout and functionality before visual design.
@@ -159,7 +159,7 @@ export const post: BlogPost[] = [
       { label: 'Design', color: '#6840c6', bgColor: '#f9f5ff' },
       { label: 'Research', color: '#3537cc', bgColor: '#eef3ff' }
     ],
-    description: "",
+    
     image: ""
   },
   {
@@ -169,7 +169,7 @@ export const post: BlogPost[] = [
     author: 'Natali Craig',
     date: '2024-01-01',
     excerpt: 'Collaboration can make our teams stronger, and our individual designs better.',
-    content: `
+    description: `
       <div class="flex flex-col gap-6 text-[#c0c5d0]">
         <p class="text-base leading-normal">
           In the world of design, the myth of the lone genius has been replaced by the reality of collaborative success. Let's explore how working together elevates our design capabilities and outcomes.
@@ -215,7 +215,7 @@ export const post: BlogPost[] = [
       { label: 'Design', color: '#6840c6', bgColor: '#f9f5ff' },
       { label: 'Research', color: '#3537cc', bgColor: '#eef3ff' }
     ],
-    description: "",
+    
     image: ""
   },
   {
@@ -225,7 +225,7 @@ export const post: BlogPost[] = [
     author: 'Drew Cano',
     date: '2024-01-01',
     excerpt: 'JavaScript frameworks make development easy with extensive features and functionalities.',
-    content: `
+    description: `
       <div class="flex flex-col gap-6 text-[#c0c5d0]">
         <p class="text-base leading-normal">
           In the ever-evolving world of web development, choosing the right JavaScript framework can make or break your project. Here's our curated list of the top 10 frameworks that stand out in 2024.
@@ -280,7 +280,7 @@ function App() {
       { label: 'Tools', color: '#3537cc', bgColor: '#eef3ff' },
       { label: 'SaaS', color: '#c01573', bgColor: '#fdf1f9' }
     ],
-    description: "",
+    
     image: ""
   },
   {
@@ -290,7 +290,7 @@ function App() {
     author: 'Orlando Diggs',
     date: '2024-01-01',
     excerpt: "Starting a community doesn't need to be complicated, but how do you get started?",
-    content: `
+    description: `
       <div class="flex flex-col gap-6 text-[#c0c5d0]">
         <p class="text-base leading-normal">
           Building a strong Customer Experience (CX) community is crucial for any business looking to improve their service and create lasting customer relationships. Let's explore how to build and nurture such a community.
@@ -337,7 +337,7 @@ function App() {
       { label: 'Podcasts', color: '#6840c6', bgColor: '#f9f5ff' },
       { label: 'Customer Success', color: '#c01573', bgColor: '#fdf1f9' }
     ],
-    description: "",
+    
     image: ""
   },
   {
@@ -347,7 +347,7 @@ function App() {
     author: 'Olivia Rhye',
     date: '2023-01-01',
     excerpt: "A grid system is a design tool used to arrange content on a webpage. It is a series of vertical and horizontal lines that create a matrix of intersecting points, which can be used to align and organize page elements. Grid systems are used to create a consistent look and feel across a website, and can help to make the layout more visually appealing and easier to navigate.",
-    content: `
+    description: `
       <div class="flex flex-col gap-6 text-[#c0c5d0]">
         <p class="text-base leading-normal">
           Building a strong Customer Experience (CX) community is crucial for any business looking to improve their service and create lasting customer relationships. Let's explore how to build and nurture such a community.
@@ -394,7 +394,7 @@ function App() {
       { label: 'Podcasts', color: '#6840c6', bgColor: '#f9f5ff' },
       { label: 'Customer Success', color: '#c01573', bgColor: '#fdf1f9' }
     ],
-    description: "",
+    
     image: ""
   }
 ];
