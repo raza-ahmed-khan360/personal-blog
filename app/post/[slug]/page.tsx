@@ -1,55 +1,42 @@
+// app/post/[slug]/page.tsx
 import { Metadata } from 'next';
+import { getAllPosts, getPostBySlug } from '@/app/utils/blog';
 import Post from '@/app/components/Post';
-import { getAllPosts } from '@/app/utils/blog';
-import { notFound } from 'next/navigation';
 
-// Import the correct types from Next.js
-import { ResolvingMetadata } from 'next';
-
-// Define props using NextJS types
-type Props = {
-  params: { slug: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
+interface Props {
+  params: {
+    slug: string;
+  };
 }
 
-// Generate static params for dynamic routes
-export async function generateStaticParams() {
-  const posts = await getAllPosts();
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
-}
-
-// Generate metadata with correct typing
-export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  const posts = await getAllPosts();
-  const post = posts.find((p) => p.slug === params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const post = getPostBySlug(params.slug);
   
   if (!post) {
     return {
-      title: 'Post Not Found',
+      title: 'Post Not Found | NxtDev',
     };
   }
 
   return {
-    title: post.title,
-    description: post.excerpt || post.title,
+    title: `${post.title} | NxtDev`,
+    description: post.description,
   };
 }
 
-// Page component with correct type annotations
-const PostPage = async ({ params, searchParams }: Props) => {
-  const posts = await getAllPosts();
-  const post = posts.find((p) => p.slug === params.slug);
+export default function PostPage({ params }: Props) {
+  const post = getPostBySlug(params.slug);
 
   if (!post) {
-    notFound();
+    return <div>Post not found</div>;
   }
 
   return <Post post={post} />;
 }
 
-export default PostPage;
+export async function generateStaticParams() {
+  const posts = getAllPosts();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
