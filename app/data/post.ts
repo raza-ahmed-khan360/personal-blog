@@ -1,7 +1,7 @@
 import { BlogPost } from "../types/blog";
 
 // data/posts.ts
-export const posts: BlogPost[] = [
+export const post: BlogPost[] = [
   {
     id: '1',
     slug: 'bill-walsh-leadership-lessons',
