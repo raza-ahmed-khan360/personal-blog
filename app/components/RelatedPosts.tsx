@@ -9,15 +9,15 @@ interface RelatedPostsProps {
 }
 
 export default function RelatedPosts({ currentPost, posts }: RelatedPostsProps) {
-  // Filter out current post and get posts with matching tags
+  // Filter out the current post and get related posts with matching tags
   const relatedPosts = posts
     .filter(post => post.id !== currentPost.id)
-    .filter(post => 
-      post.tags.some(tag => 
+    .filter(post =>
+      post.tags.some(tag =>
         currentPost.tags.some(currentTag => currentTag.label === tag.label)
       )
     )
-    .slice(0, 3);
+    .slice(0, 3); // Limit to 3 related posts
 
   if (relatedPosts.length === 0) return null;
 
@@ -25,17 +25,13 @@ export default function RelatedPosts({ currentPost, posts }: RelatedPostsProps) 
     <div className="mt-16 border-t border-gray-200 dark:border-gray-800 pt-8">
       <h2 className="text-2xl font-bold mb-8">Related Posts</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {relatedPosts.map((post) => (
-          <Link 
-            href={`/post/${post.slug}`}
-            key={post.id}
-            className="group"
-          >
+        {relatedPosts.map(post => (
+          <Link href={`/post/${post.slug}`} key={post.id} className="group">
             <div className="relative h-48 mb-4">
               <Image
                 src={post.coverImage}
                 alt={post.title}
-                fill
+                layout="fill"
                 className="object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
               />
             </div>
@@ -50,4 +46,4 @@ export default function RelatedPosts({ currentPost, posts }: RelatedPostsProps) 
       </div>
     </div>
   );
-} 
+}
