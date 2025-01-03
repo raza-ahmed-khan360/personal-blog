@@ -164,7 +164,7 @@ export const post: BlogPost[] = [
   },
   {
     id: '4',
-    slug: 'how-collaboration-makes-better-designers',
+    slug: 'collaboration-makes-better-designers',
     title: 'How collaboration makes us better designers',
     author: 'Natali Craig',
     date: '2024-01-01',
