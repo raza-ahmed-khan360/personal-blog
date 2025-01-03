@@ -50,7 +50,7 @@ export function formatDate(dateString: string): string {
   });
 }
 
-export async function getPostBySlug(slug: string) {
+export async function getPostBySlug(slug: string): Promise<BlogPost | undefined> {
   const posts = await getAllPosts();
   return posts.find((post) => post.slug === slug);
 }
