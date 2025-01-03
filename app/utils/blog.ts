@@ -50,7 +50,7 @@ export function formatDate(dateString: string): string {
   });
 }
 
-export function getPostBySlug(slug: string) {
-  const posts = getAllPosts();
+export async function getPostBySlug(slug: string) {
+  const posts = await getAllPosts();
   return posts.find((post) => post.slug === slug);
 }
