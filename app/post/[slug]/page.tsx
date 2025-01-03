@@ -10,7 +10,7 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = getPostBySlug(params.slug);
+  const post = await getPostBySlug(params.slug);
   
   if (!post) {
     return {
@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function PostPage({ params }: Props) {
-  const post = getPostBySlug(params.slug);
+export default async function PostPage({ params }: Props) {
+  const post = await getPostBySlug(params.slug);
 
   if (!post) {
     return <div>Post not found</div>;
@@ -35,7 +35,7 @@ export default function PostPage({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-  const posts = getAllPosts();
+  const posts = await getAllPosts();
   return posts.map((post) => ({
     slug: post.slug,
   }));
