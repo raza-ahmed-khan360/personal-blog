@@ -1,42 +1,27 @@
 // app/post/[slug]/page.tsx
-import { Metadata } from 'next';
-import { getAllPosts, getPostBySlug } from '@/app/utils/blog';
 import Post from '@/app/components/Post';
-
-interface Props {
-  params: {
-    slug: string;
-  };
-}
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = await getPostBySlug(params.slug);
-  
-  if (!post) {
-    return {
-      title: 'Post Not Found | NxtDev',
-    };
-  }
-
-  return {
-    title: `${post.title} | NxtDev`,
-    description: post.description,
-  };
-}
-
-export default async function PostPage({ params }: Props) {
-  const post = await getPostBySlug(params.slug);
-
-  if (!post) {
-    return <div>Post not found</div>;
-  }
-
-  return <Post post={post} />;
-}
+import { getAllPosts } from '@/app/utils/blog';
+import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
-  const posts = await getAllPosts();
+  const posts = await getAllPosts(); // Ensure async handling
   return posts.map((post) => ({
     slug: post.slug,
   }));
+}
+
+// Correcting the typing to match Next.js expectations
+export default async function PostPage({
+  params,
+}: {
+  params: { slug: string }; // Adjusted to directly destructure params
+}) {
+  const posts = await getAllPosts(); // Ensure async handling
+  const post = posts.find((p) => p.slug === params.slug);
+
+  if (!post) {
+    notFound(); // Trigger a 404 if the post is not found
+  }
+
+  return <Post post={post} />;
 }
