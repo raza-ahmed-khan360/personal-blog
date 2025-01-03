@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { BlogPost } from '../types/blog';
 import { formatDate } from '../utils/blog';
+import { post } from '../data/post';
 import RelatedPosts from '../components/RelatedPosts';
 import CommentSection from '../components/CommentSection';
 import Newsletter from '../components/Newsletter';
