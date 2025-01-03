@@ -10,6 +10,10 @@ interface PageProps {
   }>;
 }
 
+interface Params {
+  slug: string;
+}
+
 export async function generateMetadata({
   params,
 }: {
