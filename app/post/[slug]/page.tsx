@@ -3,13 +3,14 @@ import Post from '@/app/components/Post';
 import { getAllPosts } from '@/app/utils/blog';
 import { notFound } from 'next/navigation';
 
-// Define correct props interface for Next.js page components
+// Import the correct types from Next.js
+import { ResolvingMetadata } from 'next';
+
+// Define props using NextJS types
 type Props = {
-  params: {
-    slug: string;
-  };
-  searchParams: Record<string, string | string[] | undefined>;
-};
+  params: { slug: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
 
 // Generate static params for dynamic routes
 export async function generateStaticParams() {
@@ -19,8 +20,11 @@ export async function generateStaticParams() {
   }));
 }
 
-// Optionally generate metadata for the page
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+// Generate metadata with correct typing
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
   const posts = await getAllPosts();
   const post = posts.find((p) => p.slug === params.slug);
   
@@ -36,8 +40,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-// Page component for rendering a post
-export default async function PostPage({ params }: Props) {
+// Page component with correct type annotations
+const PostPage = async ({ params, searchParams }: Props) => {
   const posts = await getAllPosts();
   const post = posts.find((p) => p.slug === params.slug);
 
@@ -47,3 +51,5 @@ export default async function PostPage({ params }: Props) {
 
   return <Post post={post} />;
 }
+
+export default PostPage;
