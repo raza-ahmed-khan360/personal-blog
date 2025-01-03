@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-900">
-      <div className="max-w-[1728px] w-full flex flex-col items-center justify-center gap-8">
+    <div className="h-screen w-full flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-900">
+      <div className="max-w-[1728px] w-full flex flex-col items-center justify-center gap-3">
         {/* Image Container */}
         <div className="w-full max-w-[778px] relative aspect-[777.55/914.59]">
           <svg
@@ -30,7 +30,7 @@ export default function NotFound() {
               y="350"
               className="font-poppins font-bold"
               fill="#566FA6"
-              fontSize="180"
+              fontSize="100"
             >
               404
             </text>
