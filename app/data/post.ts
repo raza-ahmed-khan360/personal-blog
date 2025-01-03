@@ -339,5 +339,62 @@ function App() {
     ],
     description: "",
     image: ""
+  },
+  {
+    id: '7',
+    slug: 'grid-system-for-better-design-ui',
+    title: 'Grid system for better Design UI',
+    author: 'Olivia Rhye',
+    date: '2023-01-01',
+    excerpt: "A grid system is a design tool used to arrange content on a webpage. It is a series of vertical and horizontal lines that create a matrix of intersecting points, which can be used to align and organize page elements. Grid systems are used to create a consistent look and feel across a website, and can help to make the layout more visually appealing and easier to navigate.",
+    content: `
+      <div class="flex flex-col gap-6 text-[#c0c5d0]">
+        <p class="text-base leading-normal">
+          Building a strong Customer Experience (CX) community is crucial for any business looking to improve their service and create lasting customer relationships. Let's explore how to build and nurture such a community.
+        </p>
+
+        <div class="flex flex-col items-center gap-3">
+          <img 
+            src="/b6.png" 
+            alt="CX Community" 
+            class="w-full max-w-[778px] h-auto rounded-lg"
+          />
+          <p class="text-center max-w-[567px] mx-auto">
+            Community engagement and customer experience interaction.
+          </p>
+        </div>
+
+        <h2 class="text-lg font-bold">Why Community Matters in CX</h2>
+        <p class="text-base leading-normal">
+          A strong community creates a feedback loop that helps businesses understand their customers better while providing customers with a platform to share experiences and get support.
+        </p>
+
+        <h2 class="text-lg font-bold">Key Steps to Building a CX Community</h2>
+        <ul class="list-disc pl-6 space-y-4">
+          <li>Define your community's purpose</li>
+          <li>Choose the right platform</li>
+          <li>Create engaging content</li>
+          <li>Foster meaningful discussions</li>
+          <li>Measure and iterate</li>
+        </ul>
+
+        <div class="bg-[#1a1a1a] p-6 rounded-lg my-6">
+          <p class="text-sm font-bold mb-2">🎙️ Podcast Highlights</p>
+          <ul class="list-disc pl-4 space-y-2 text-sm">
+            <li>Understanding community dynamics</li>
+            <li>Tools and platforms for community building</li>
+            <li>Engagement strategies that work</li>
+            <li>Measuring community success</li>
+          </ul>
+        </div>
+      </div>
+    `,
+    coverImage: '/b6.png',
+    tags: [
+      { label: 'Podcasts', color: '#6840c6', bgColor: '#f9f5ff' },
+      { label: 'Customer Success', color: '#c01573', bgColor: '#fdf1f9' }
+    ],
+    description: "",
+    image: ""
   }
 ];

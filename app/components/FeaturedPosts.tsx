@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function FeaturedPosts() {
-  const posts = getAllPosts().slice(0, 3); // Get first 3 posts
+  const posts = getAllPosts().slice(0, 3); 
 
   return (
     <section className="py-16 bg-gray-50 dark:bg-gray-900">
