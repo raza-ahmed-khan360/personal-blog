@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Tag } from "../../types/blog";
-import { post } from "../../data/post"
+import { post } from "../../data/post";
 
 interface BlogPost {
   id: string;
@@ -50,7 +50,7 @@ function AllBlogs() {
                   {post.title}
                 </h3>
                 <p className="text-sm text-gray-600">
-                  {post.content}
+                  {post.excerpt}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {post.tags.map((tag, idx) => (
