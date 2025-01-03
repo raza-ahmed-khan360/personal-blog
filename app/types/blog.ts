@@ -13,8 +13,8 @@ export interface BlogPost {
   date: string;
   description: string;
   excerpt: string;
-  content: string;
-  image: string;
-  coverImage: string;
+  content?: string;
+  image?: string;
+  coverImage?: string;
   tags: Tag[];
 }
