@@ -49,3 +49,8 @@ export function formatDate(dateString: string): string {
     day: 'numeric'
   });
 }
+
+export function getPostBySlug(slug: string) {
+  const posts = getAllPosts();
+  return posts.find((post) => post.slug === slug);
+}
