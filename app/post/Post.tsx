@@ -39,7 +39,7 @@ const Post = ({ post, posts }: PostProps) => {
       {/* Content */}
       <div
         className="prose prose-lg my-8"
-        dangerouslySetInnerHTML={{ __html: post.content }}
+        { post.content }
       />
 
       {/* Tags */}
