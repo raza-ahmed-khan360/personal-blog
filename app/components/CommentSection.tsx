@@ -1,6 +1,14 @@
 import { useState } from 'react';
 import { formatDate } from '../utils/blog';
 
+interface Comment {
+  id: string;
+  postId: string;
+  author: string;
+  content: string;
+  date: string;
+}
+
 interface CommentSectionProps {
   postId: string;
 }
