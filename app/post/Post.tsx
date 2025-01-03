@@ -37,10 +37,9 @@ const Post = ({ post, posts }: PostProps) => {
       )}
 
       {/* Content */}
-      <div
-        className="prose prose-lg my-8"
+      <div className="prose prose-lg my-8">
         { post.content }
-      />
+      </div>
 
       {/* Tags */}
       {post.tags.length > 0 && (
