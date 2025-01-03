@@ -4,8 +4,10 @@ import { projects } from '../../data/projects';
 import ProjectContent from './ProjectContent';
 
 // Define the props directly to avoid conflicts
-interface Params {
-  slug: string;
+interface PageProps {
+  params: Promise<{
+    slug: string;
+  }>;
 }
 
 export async function generateMetadata({
