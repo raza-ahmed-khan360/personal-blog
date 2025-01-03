@@ -9,13 +9,14 @@ interface PageProps {
   }>;
 }
 
-export default function TagPage({ params }: PageProps) {
-  const posts = getPostsByTag(decodeURIComponent(params.tag));
+export default async function TagPage({ params }: PageProps) {
+  const resolvedParams = await params;
+  const posts = getPostsByTag(decodeURIComponent(resolvedParams.tag));
 
   return (
     <div className="container mx-auto px-4 py-16">
       <h1 className="text-4xl font-bold mb-8">
-        Posts tagged with "{decodeURIComponent(params.tag)}"
+        Posts tagged with "{decodeURIComponent(resolvedParams.tag)}"
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
@@ -48,4 +49,4 @@ export default function TagPage({ params }: PageProps) {
       </div>
     </div>
   );
-} 
+}
