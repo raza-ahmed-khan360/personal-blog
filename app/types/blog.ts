@@ -12,7 +12,7 @@ export interface BlogPost {
   author: string;
   date: string;
   description: string;
-  excerpt: string;
+  excerpt?: string;
   content?: string;
   image?: string;
   coverImage?: string;
