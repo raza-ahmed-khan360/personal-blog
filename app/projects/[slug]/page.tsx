@@ -8,7 +8,7 @@ interface Params {
 }
 
 interface PageProps {
-  params: Promise<Params>;
+  params: Params;
 }
 
 export async function generateMetadata({
