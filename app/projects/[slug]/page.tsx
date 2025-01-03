@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { projects } from '../../data/projects';
 import ProjectContent from './ProjectContent';
 
-// Define the props directly to avoid conflicts
+// Define the structure for the params
 interface Params {
   slug: string;
 }
@@ -11,7 +11,7 @@ interface Params {
 export async function generateMetadata({
   params,
 }: {
-  params: Params;
+  params: Awaited<Promise<Params>>; // Adjusting to expected async type
 }): Promise<Metadata> {
   const project = projects.find((p) => p.slug === params.slug);
 
@@ -32,7 +32,11 @@ export async function generateMetadata({
   };
 }
 
-export default function ProjectPage({ params }: { params: Params }) {
+export default function ProjectPage({
+  params,
+}: {
+  params: Awaited<Promise<Params>>; // Adjusting to expected async type
+}) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
