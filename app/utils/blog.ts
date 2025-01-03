@@ -1,7 +1,6 @@
 import { post } from '../data/post';
 import { BlogPost, Tag } from '../types/blog';
 
-// Mock data - replace with actual data fetching logic
 const blogPosts: BlogPost[] = post;
 
 export function getAllPosts(): BlogPost[] {

@@ -4,7 +4,7 @@ import { BlogPost } from "../types/blog";
 export const post: BlogPost[] = [
   {
     id: '1',
-    slug: 'bill-walsh-leadership-lessons',
+    slug: 'bill-walsh-leadership',
     title: 'Bill Walsh leadership lessons',
     author: 'Alec Whitten',
     date: '2024-01-01',
