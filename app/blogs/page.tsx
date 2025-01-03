@@ -16,14 +16,14 @@ export default function BlogsPage() {
             className="group"
           >
             <article className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="relative h-48 w-full">
+              {post.coverImage && => (<div className="relative h-48 w-full">
                 <Image
                   src={post.coverImage}
                   alt={post.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-              </div>
+              </div>)}
               <div className="p-6">
                 <div className="flex gap-2 mb-4">
                   {post.tags.map((tag, index) => (
