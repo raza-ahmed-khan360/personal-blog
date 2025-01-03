@@ -3,12 +3,15 @@ import { notFound } from 'next/navigation';
 import { projects } from '../../data/projects';
 import ProjectContent from './ProjectContent';
 
-interface Params {
-  slug: string;
+// Define the props directly to avoid conflicts
+interface PageProps {
+  params: Promise<{
+    slug: string;
+  }>;
 }
 
-interface PageProps {
-  params: Promise<Params>;
+interface Params {
+  slug: string;
 }
 
 export async function generateMetadata({
