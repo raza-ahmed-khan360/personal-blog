@@ -1,28 +1,29 @@
-// app/post/[slug]/page.tsx
-import Post from '@/app/components/Post';
-import { getAllPosts } from '../../utils/blog';
 import { notFound } from 'next/navigation';
+import Post from '@/app/components/Post';
+import { getAllPosts } from '@/app/utils/blog';
 
-interface Props {
+interface PostPageProps {
   params: {
     slug: string;
   };
 }
 
+// This function generates static paths for all blog posts
 export async function generateStaticParams() {
-  const posts = getAllPosts();
+  const posts = await getAllPosts(); // Ensure this function supports async if it fetches data
   return posts.map((post) => ({
     slug: post.slug,
   }));
 }
 
-export default function PostPage({ params }: Props) {
-  const posts = getAllPosts();
+// Main component for displaying the post
+export default async function PostPage({ params }: PostPageProps) {
+  const posts = await getAllPosts(); // Support asynchronous fetch
   const post = posts.find((p) => p.slug === params.slug);
-  
+
   if (!post) {
     notFound();
   }
-  
-  return <Post post={post} />;  // Added the Post component with post prop
+
+  return <Post post={post} />;
 }
