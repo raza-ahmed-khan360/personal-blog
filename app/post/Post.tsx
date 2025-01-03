@@ -5,7 +5,7 @@ import { formatDate } from '../utils/blog';
 import RelatedPosts from '../components/RelatedPosts';
 import CommentSection from '../components/CommentSection';
 import Newsletter from '../components/Newsletter';
-
+import { post } from '../data/post'
 interface PostProps {
   post: BlogPost;
   posts: BlogPost[]; // Ensure posts prop is passed
