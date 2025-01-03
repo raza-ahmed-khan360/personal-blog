@@ -11,7 +11,7 @@ interface Params {
 export async function generateMetadata({
   params,
 }: {
-  params: Awaited<Promise<Params>>; // Adjusting to expected async type
+  params: Awaited<Params>; // Direct async handling
 }): Promise<Metadata> {
   const project = projects.find((p) => p.slug === params.slug);
 
@@ -35,7 +35,7 @@ export async function generateMetadata({
 export default function ProjectPage({
   params,
 }: {
-  params: Awaited<Promise<Params>>; // Adjusting to expected async type
+  params: Awaited<Params>; // Direct async handling
 }) {
   const project = projects.find((p) => p.slug === params.slug);
 
