@@ -18,6 +18,22 @@ const blogPosts: BlogPost[] = [
     content: '',
     coverImage: ''
   },
+  {
+    id: "2",
+    slug: "bill-walsh-leadership",
+    author: "Alec Whitten",
+    date: "2023-01-01",
+    title: "Bill Walsh leadership lessons",
+    description: "Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?",
+    image: "/b1.png",
+    tags: [
+      { label: "Leadership", bgColor: "#f9f5ff", color: "#6840c6" },
+      { label: "Management", bgColor: "#fdf2fa", color: "#c11574" },
+    ],
+    excerpt: '',
+    content: '',
+    coverImage: ''
+  },
   // Add more blog posts here
 ];
 
