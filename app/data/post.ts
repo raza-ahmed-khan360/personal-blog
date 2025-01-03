@@ -1,6 +1,6 @@
+// data/posts.ts
 import { BlogPost } from "../types/blog";
 
-// data/posts.ts
 export const post: BlogPost[] = [
   {
     id: '1',
