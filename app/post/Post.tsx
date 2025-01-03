@@ -8,9 +8,10 @@ import Newsletter from '../components/Newsletter';
 
 interface PostProps {
   post: BlogPost;
+  posts: BlogPost[]; // Ensure posts prop is passed
 }
 
-const Post = ({ post }: PostProps) => {
+const Post = ({ post, posts }: PostProps) => {
   return (
     <article className="max-w-4xl mx-auto p-6">
       {/* Date */}
@@ -61,7 +62,7 @@ const Post = ({ post }: PostProps) => {
       {/* Related Posts */}
       <div className="mt-12">
         <h2 className="text-xl font-semibold">Related Posts</h2>
-        <RelatedPosts currentPost={post} />
+        <RelatedPosts currentPost={post} posts={posts} />
       </div>
 
       {/* Comment Section */}
