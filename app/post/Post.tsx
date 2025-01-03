@@ -61,7 +61,7 @@ const Post = ({ post }: PostProps) => {
       {/* Related Posts */}
       <div className="mt-12">
         <h2 className="text-xl font-semibold">Related Posts</h2>
-        <RelatedPosts currentPostId={post.id} />
+        <RelatedPosts currentPost={post} />
       </div>
 
       {/* Comment Section */}
