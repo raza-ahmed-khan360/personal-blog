@@ -4,9 +4,9 @@ import Image from 'next/image';
 import { formatDate } from '../../utils/blog';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     tag: string;
-  };
+  }>;
 }
 
 export default function TagPage({ params }: PageProps) {
