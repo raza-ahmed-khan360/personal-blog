@@ -1,4 +1,3 @@
-"use client";
 import { useState } from 'react';
 import { formatDate } from '../utils/blog';
 
@@ -99,4 +98,4 @@ export default function CommentSection({ postId }: CommentSectionProps) {
       )}
     </div>
   );
-} 
+}
