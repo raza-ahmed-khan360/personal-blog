@@ -3,15 +3,17 @@ import { notFound } from 'next/navigation';
 import { projects } from '../../data/projects';
 import ProjectContent from './ProjectContent';
 
+// Adjusted type for PageProps
 interface PageProps {
   params: {
     slug: string;
   };
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const project = projects.find(p => p.slug === params.slug);
-  
+// Metadata generation function
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const project = projects.find((p) => p.slug === params.slug);
+
   if (!project) {
     return {
       title: 'Project Not Found',
@@ -29,9 +31,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function ProjectPage({ params }: PageProps) {
-  const project = projects.find(p => p.slug === params.slug);
-  
+// Main ProjectPage component
+export default function ProjectPage({ params }: { params: { slug: string } }) {
+  const project = projects.find((p) => p.slug === params.slug);
+
   if (!project) {
     notFound();
   }
@@ -39,8 +42,9 @@ export default function ProjectPage({ params }: PageProps) {
   return <ProjectContent project={project} />;
 }
 
+// Generating static paths
 export async function generateStaticParams() {
   return projects.map((project) => ({
     slug: project.slug,
   }));
-} 
+}
