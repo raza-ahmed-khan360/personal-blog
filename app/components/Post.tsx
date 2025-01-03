@@ -25,7 +25,6 @@ const Post = ({ post, posts }: PostProps) => {
       <p className="text-lg text-gray-700 mt-2">By {post.author}</p>
 
       {/* Cover Image */}
-      {post.coverImage && (
         <div className="my-6">
           <Image
             src={post.coverImage}
@@ -35,7 +34,6 @@ const Post = ({ post, posts }: PostProps) => {
             className="rounded-lg shadow-md"
           />
         </div>
-      )}
 
       {/* Content */}
       <div
