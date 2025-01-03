@@ -10,7 +10,8 @@ interface PageProps {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const project = projects.find((p) => p.slug === params.slug);
+  const resolvedParams = await params;
+  const project = projects.find((p) => p.slug === resolvedParams.slug);
 
   if (!project) {
     return {
@@ -30,7 +31,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function ProjectPage({ params }: PageProps) {
-  const project = projects.find((p) => p.slug === params.slug);
+  const resolvedParams = await params;
+  const project = projects.find((p) => p.slug === resolvedParams.slug);
 
   if (!project) {
     notFound();
