@@ -56,7 +56,7 @@ export const post: BlogPost[] = [
       { label: 'Management', color: '#c01573', bgColor: '#fdf1f9' }
     ],
     
-    image: ""
+    image: "/b1.png"
   },
   {
     id: '2',
