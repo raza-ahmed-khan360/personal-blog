@@ -16,9 +16,7 @@ interface BlogPost {
 }
 
 function AllBlogs() {
-  const blogPosts: BlogPost = [
-    post
-  ];
+  const blogPosts: BlogPost[] = post;
 
   return (
     <div className="py-10 bg-white flex flex-col items-center gap-12">
@@ -77,4 +75,5 @@ function AllBlogs() {
 
 
 export default AllBlogs;
+
 
