@@ -32,7 +32,7 @@ const Post = ({ post, posts }: PostProps) => {
       <p className="text-lg text-gray-700 mt-2">By {post.author}</p>
 
       {/* Cover Image */}
-      {!(post.description && post.coverImage && post.description.includes(post.coverImage)) && (
+      {!(post.description && post.coverImage && post.description.includes(post.coverImage || "/featured.png")) && (
         <div className="my-6">
           <Image
             src={post.coverImage || "/featured.png"}
@@ -86,5 +86,6 @@ const Post = ({ post, posts }: PostProps) => {
 };
 
 export default Post;
+
 
 
