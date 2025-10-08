@@ -8,7 +8,7 @@ import Newsletter from '../components/Newsletter';
 
 interface PostProps {
   post: BlogPost;
-  posts?: BlogPost[]; // Ensure posts prop is passed
+  posts: BlogPost[]; // Ensure posts prop is passed
 }
 
 const Post = ({ post, posts }: PostProps) => {
@@ -78,4 +78,5 @@ const Post = ({ post, posts }: PostProps) => {
 };
 
 export default Post;
+
 
