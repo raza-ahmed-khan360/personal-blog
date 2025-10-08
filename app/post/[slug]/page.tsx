@@ -27,5 +27,6 @@ export default async function PostPage({ params }: Awaited<PageProps>) {
     notFound(); // Trigger a 404 page if no matching post is found
   }
 
-  return <Post post={post} />;
+  return <Post post={post} posts={posts} />;
 }
+
