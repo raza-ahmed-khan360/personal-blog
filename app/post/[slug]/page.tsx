@@ -29,3 +29,4 @@ export default async function PostPage({ params }: Awaited<PageProps>) {
 
   return <Post post={post} posts={posts} />;
 }
+

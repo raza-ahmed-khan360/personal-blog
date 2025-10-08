@@ -86,3 +86,5 @@ const Post = ({ post, posts }: PostProps) => {
 };
 
 export default Post;
+
+
