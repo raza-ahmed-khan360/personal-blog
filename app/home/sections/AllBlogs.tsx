@@ -1,19 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { BlogPost } from "../../types/blog";
 import { Tag } from "../../types/blog";
 import { post } from "../../data/post";
-
-interface BlogPost {
-  id: string;
-  slug: string;
-  author: string;
-  date: string;
-  title: string;
-  description: string;
-  image: string;
-  tags: Tag[];
-}
 
 function AllBlogs() {
   const blogPosts: BlogPost[] = post;
@@ -75,5 +65,6 @@ function AllBlogs() {
 
 
 export default AllBlogs;
+
 
 
