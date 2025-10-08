@@ -14,8 +14,9 @@ export interface BlogPost {
   description: string;
   excerpt?: string;
   content?: string;
-  image?: string;
+  image?: string | undefined;
   coverImage?: string | StaticImport;
   tags: Tag[];
 
 }
+
