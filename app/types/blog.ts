@@ -16,11 +16,12 @@ export interface BlogPost {
   description: string;
   excerpt?: string;
   content?: string;
-  image?: string | StaticImport;
-  coverImage?: string | StaticImport;
+  image: string | StaticImport;
+  coverImage: string | StaticImport;
   tags: Tag[];
 
 }
+
 
 
 
