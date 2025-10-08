@@ -15,6 +15,7 @@ export interface BlogPost {
   excerpt?: string;
   content?: string;
   image?: string;
-  coverImage?: string;
+  coverImage?: string | StaticImport;
   tags: Tag[];
+
 }
