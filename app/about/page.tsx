@@ -1,5 +1,6 @@
 import Hero from './sections/Hero';
 import Image from 'next/image';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function AboutPage() {
   const skills = [
@@ -17,6 +18,7 @@ export default function AboutPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
+            <Breadcrumbs items={[{ label: 'About', href: '/about' }]} />
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Hi, I'm a Full Stack Developer
             </h2>

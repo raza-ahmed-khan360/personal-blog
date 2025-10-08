@@ -2,28 +2,17 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Tag } from "../../types/blog";
-import { post } from "../../data/post";
+import { getAllPosts } from "../../utils/blog";
 
-interface BlogPost {
-  id: string;
-  slug: string;
-  author: string;
-  date: string;
-  title: string;
-  description: string;
-  image: string;
-  tags: Tag[];
-}
+// Use the BlogPost type from types/blog
 
 function AllBlogs() {
-  const blogPosts: BlogPost[] = [
-    post
-  ];
+  const blogPosts = getAllPosts().slice(0, 3);
 
   return (
     <div className="py-10 bg-white flex flex-col items-center gap-12">
       <div className="w-full max-w-7xl px-4 sm:px-8 flex flex-col gap-8">
-        <h2 className="text-2xl font-semibold text-gray-900">
+        <h2 className="text-3xl font-bold text-gray-900">
           All Blog Posts
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -37,7 +26,7 @@ function AllBlogs() {
                 <Image
                   height={240}
                   width={384}
-                  src={post.image}
+                  src={post.coverImage || "/featured.png"}
                   alt={post.title}
                   className="w-full h-[200px] object-cover transition-transform duration-300 group-hover:scale-110"
                 />
@@ -49,9 +38,11 @@ function AllBlogs() {
                 <h3 className="text-lg font-semibold text-gray-900 leading-6 group-hover:text-purple-600">
                   {post.title}
                 </h3>
-                <p className="text-sm text-gray-600">
-                  {post.excerpt}
-                </p>
+                {post.excerpt && (
+                  <p className="text-sm text-gray-600">
+                    {post.excerpt}
+                  </p>
+                )}
                 <div className="flex flex-wrap gap-2">
                   {post.tags.map((tag, idx) => (
                     <span
@@ -69,6 +60,13 @@ function AllBlogs() {
               </div>
             </Link>
           ))}
+        </div>
+        <div className="flex justify-center mt-8">
+          <Link href="/blogs">
+            <button className="px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors shadow">
+              Show More Blogs
+            </button>
+          </Link>
         </div>
       </div>
     </div>

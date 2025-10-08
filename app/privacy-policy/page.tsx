@@ -1,8 +1,10 @@
 import Hero from './sections/Hero';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen pt-16">
+      <Breadcrumbs items={[{ label: 'Privacy Policy', href: '/privacy-policy' }]} />
       <Hero title="PRIVACY POLICY" />
       
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

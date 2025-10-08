@@ -10,9 +10,14 @@ interface RelatedPostsProps {
 
 export default function RelatedPosts({ currentPost, posts }: RelatedPostsProps) {
   // Filter out the current post and get related posts with matching tags
+  // Guard against undefined or non-array posts
+  if (!Array.isArray(posts) || !currentPost) return null;
+
+  // Filter out the current post and get related posts with matching tags
   const relatedPosts = posts
     .filter(post => post.id !== currentPost.id)
     .filter(post =>
+      post.tags && currentPost.tags &&
       post.tags.some(tag =>
         currentPost.tags.some(currentTag => currentTag.label === tag.label)
       )
@@ -29,7 +34,7 @@ export default function RelatedPosts({ currentPost, posts }: RelatedPostsProps) 
           <Link href={`/post/${post.slug}`} key={post.id} className="group">
             <div className="relative h-48 mb-4">
               <Image
-                src={post.coverImage}
+                src={post.coverImage || "/featured.png"}
                 alt={post.title}
                 layout="fill"
                 className="object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"

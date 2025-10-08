@@ -5,6 +5,7 @@ import { formatDate } from '../utils/blog';
 import RelatedPosts from '../components/RelatedPosts';
 import CommentSection from '../components/CommentSection';
 import Newsletter from '../components/Newsletter';
+import Breadcrumbs from './Breadcrumbs';
 
 interface PostProps {
   post: BlogPost;
@@ -14,8 +15,15 @@ interface PostProps {
 const Post = ({ post, posts }: PostProps) => {
   return (
     <article className="max-w-4xl mx-auto p-6">
+      <Breadcrumbs
+        items={[
+          { label: 'Blog', href: '/blogs' },
+          { label: post.title }
+        ]}
+      />
+
       {/* Date */}
-      <p className="text-sm text-gray-500">{formatDate(post.date)}</p>
+      <p className="text-sm text-gray-500 mt-4">{formatDate(post.date)}</p>
 
       {/* Title */}
       <h1 className="text-3xl font-bold mt-4">{post.title}</h1>
@@ -24,19 +32,21 @@ const Post = ({ post, posts }: PostProps) => {
       <p className="text-lg text-gray-700 mt-2">By {post.author}</p>
 
       {/* Cover Image */}
+      {!(post.description && post.coverImage && post.description.includes(post.coverImage)) && (
         <div className="my-6">
           <Image
-            src={post.coverImage}
+            src={post.coverImage || "/featured.png"}
             alt={`Cover image for ${post.title}`}
             width={800}
             height={400}
             className="rounded-lg shadow-md"
           />
         </div>
+      )}
 
       {/* Content */}
       <div
-        className="prose prose-lg my-8"
+        className="prose prose-lg my-8 prose-black"
         dangerouslySetInnerHTML={{ __html: post.description }}
       />
 
@@ -59,13 +69,11 @@ const Post = ({ post, posts }: PostProps) => {
 
       {/* Related Posts */}
       <div className="mt-12">
-        <h2 className="text-xl font-semibold">Related Posts</h2>
-        <RelatedPosts currentPost={post} posts={posts} />
+        <RelatedPosts currentPost={post} posts={posts.slice(0, 3)} />
       </div>
 
       {/* Comment Section */}
       <div className="mt-12">
-        <h2 className="text-xl font-semibold">Comments</h2>
         <CommentSection postId={post.id} />
       </div>
 

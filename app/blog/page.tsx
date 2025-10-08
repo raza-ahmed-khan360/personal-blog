@@ -1,10 +1,12 @@
 import Hero from '../home/sections/Hero';
 import AllBlogs from '../home/sections/AllBlogs';
 import TagCloud from '../components/TagCloud';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function BlogPage() {
   return (
     <div className="min-h-screen pt-16">
+      <Breadcrumbs items={[{ label: 'Blog', href: '/blog' }]} />
       <Hero title="BLOG" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -18,4 +20,4 @@ export default function BlogPage() {
       </div>
     </div>
   );
-} 
+}

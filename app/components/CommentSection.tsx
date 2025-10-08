@@ -52,14 +52,14 @@ export default function CommentSection({ postId }: CommentSectionProps) {
       <h2 className="text-2xl font-bold mb-8">Comments</h2>
 
       {/* Comment Form */}
-      <form onSubmit={handleSubmit} className="mb-8">
+  <form onSubmit={handleSubmit} className="mb-8 shadow-md rounded-xl bg-white p-6">
         <div className="mb-4">
           <input
             type="text"
             placeholder="Your name"
             value={authorName}
             onChange={(e) => setAuthorName(e.target.value)}
-            className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-full px-4 py-2 rounded-xl border border-gray-300 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-sm"
             required
           />
         </div>
@@ -68,13 +68,13 @@ export default function CommentSection({ postId }: CommentSectionProps) {
             placeholder="Write a comment..."
             value={newComment}
             onChange={(e) => setNewComment(e.target.value)}
-            className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-500 min-h-[100px]"
+            className="w-full px-4 py-2 rounded-xl border border-gray-300 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500 min-h-[100px] shadow-sm"
             required
           />
         </div>
         <button
           type="submit"
-          className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+          className="px-6 py-2 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition-colors shadow"
         >
           Post Comment
         </button>
@@ -85,23 +85,23 @@ export default function CommentSection({ postId }: CommentSectionProps) {
         {comments.map((comment) => (
           <div
             key={comment.id}
-            className={`bg-gray-50 dark:bg-gray-800 rounded-lg p-6 ${commentStyles.comment}`}
+            className={`bg-gray-50 rounded-xl p-6 shadow ${commentStyles.comment}`}
           >
             <div className="flex items-center justify-between mb-4">
-              <div className="font-medium text-purple-600 dark:text-purple-400">
+              <div className="font-medium text-purple-600">
                 {comment.author}
               </div>
-              <time className="text-sm text-gray-500 dark:text-gray-400">
+              <time className="text-sm text-gray-500">
                 {formatDate(comment.date)}
               </time>
             </div>
-            <p className="text-gray-700 dark:text-gray-300">{comment.content}</p>
+            <p className="text-black">{comment.content}</p>
           </div>
         ))}
       </div>
 
       {comments.length === 0 && (
-        <p className="text-center text-gray-500 dark:text-gray-400 py-8">
+        <p className="text-center text-gray-500 py-8">
           No comments yet. Be the first to comment!
         </p>
       )}

@@ -18,7 +18,7 @@ export default function FeaturedPosts() {
             >
               <div className="relative h-48 mb-4">
                 <Image
-                  src={post.coverImage}
+                  src={post.coverImage || "/featured.png"}
                   alt={post.title}
                   fill
                   className="object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"

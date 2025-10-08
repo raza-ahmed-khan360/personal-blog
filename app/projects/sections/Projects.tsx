@@ -69,9 +69,9 @@ const ProjectGrid = () => {
   ];
 
   return (
-    <div className="min-h-screen p-8">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-2xl font-bold mb-8">List Project</h2>
+    <section className="bg-white border-t border-gray-200 py-16">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-10">Featured Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.slice(0, 2).map((project, index) => (
             <ProjectCard key={index} project={project} fullWidth={undefined} />
@@ -82,7 +82,7 @@ const ProjectGrid = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

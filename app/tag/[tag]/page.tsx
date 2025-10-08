@@ -2,6 +2,7 @@ import { getPostsByTag } from '../../utils/blog';
 import Link from 'next/link';
 import Image from 'next/image';
 import { formatDate } from '../../utils/blog';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 interface PageProps {
   params: Promise<{
@@ -15,6 +16,7 @@ export default async function TagPage({ params }: PageProps) {
 
   return (
     <div className="container mx-auto px-4 py-16">
+      <Breadcrumbs items={[{ label: 'Tags', href: '/tag' }, { label: decodeURIComponent(resolvedParams.tag) }]} />
       <h1 className="text-4xl font-bold mb-8">
         Posts tagged with "{decodeURIComponent(resolvedParams.tag)}"
       </h1>
@@ -27,7 +29,7 @@ export default async function TagPage({ params }: PageProps) {
           >
             <div className="relative h-48">
               <Image
-                src={post.coverImage}
+                src={post.coverImage || '/b1.png'}
                 alt={post.title}
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-105"

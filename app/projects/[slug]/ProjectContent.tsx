@@ -64,7 +64,7 @@ export default function ProjectContent({ project }: ProjectContentProps) {
             </a>
           </div>
           <div 
-            className="prose prose-lg max-w-none prose-p:text-gray-600 prose-headings:text-gray-900"
+            className="prose prose-lg prose-black max-w-none prose-p:text-gray-600 prose-headings:text-gray-900"
             dangerouslySetInnerHTML={{ __html: project.content }} 
           />
         </div>

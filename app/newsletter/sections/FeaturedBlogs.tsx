@@ -1,56 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { Tag } from '../../types/blog';
-
-interface BlogPost {
-  id: string;
-  date: string;
-  title: string;
-  description: string;
-  image: string;
-  tags: Tag[];
-}
+import { getAllPosts } from '../../utils/blog';
 
 const BlogPosts = () => {
-  const blogPosts: BlogPost[] = [
-    {
-      id: '1',
-      date: 'Sunday, 1 Jan 2023',
-      title: 'Bill Walsh leadership lessons',
-      description: 'Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?',
-      image: '/fb1.png',
-      tags: [
-        { label: "Leadership", bgColor: "#f9f5ff", color: "#6840c6" },
-        { label: "Management", bgColor: "#fdf2fa", color: "#c11574" },
-        { label: "Presentation", bgColor: "#f0f9ff", color: "#026aa2" },
-      ],
-    },
-    {
-      id: '2',
-      date: 'Sunday, 1 Jan 2023',
-      title: 'PM mental models',
-      description: 'Mental models are simple expressions of complex processes or relationships.',
-      image: '/fb2.png',
-      tags: [
-        { label: "Product", bgColor: "#f9f5ff", color: "#6840c6" },
-        { label: "Research", bgColor: "#fdf2fa", color: "#c11574" },
-        { label: "Frameworks", bgColor: "#f0f9ff", color: "#026aa2" },
-      ],
-    },
-    {
-      id: '3',
-      date: 'Sunday, 1 Jan 2023',
-      title: 'What is Wireframing?',
-      description: 'Introduction to Wireframing and its Principles. Learn from the best in the industry.',
-      image: '/fb3.png',
-      tags: [
-        { label: "Design", bgColor: "#f9f5ff", color: "#6840c6" },
-        { label: "Research", bgColor: "#fdf2fa", color: "#c11574" },
-        { label: "Presentation", bgColor: "#f0f9ff", color: "#026aa2" },
-      ],
-    }
-  ];
+  const blogPosts = getAllPosts();
 
   return (
     <div className="w-full bg-white py-8 md:py-12">
@@ -64,7 +18,7 @@ const BlogPosts = () => {
                 <Image
                   width={384}
                   height={240}
-                  src={post.image} 
+                  src={post.coverImage || "/featured.png"}
                   alt={post.title}
                   className="w-full aspect-[16/10] object-cover rounded-lg"
                 />

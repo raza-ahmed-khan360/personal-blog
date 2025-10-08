@@ -3,6 +3,7 @@ import Featured from "./sections/Featured";
 import Hero from "./sections/Hero";
 import RecentPost from "./sections/RecentPost";
 import AllBlogs from "./sections/AllBlogs";
+import Projects from '../projects/sections/Projects';
 
 function Homepage() {
   return (
@@ -11,6 +12,7 @@ function Homepage() {
       <RecentPost />
       <Featured />
       <AllBlogs />
+      <Projects />
     </div>
   );
 }

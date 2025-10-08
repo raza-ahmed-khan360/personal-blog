@@ -17,6 +17,7 @@ const Featured = () => {
   return (
     <div className="h-auto py-8 bg-white flex flex-col justify-start items-center gap-12">
       <div className="w-full px-8 flex flex-col gap-6">
+      <h2 className="text-3xl font-bold text-gray-900 text-left">Featured blog</h2>
         <div className="flex flex-wrap items-start gap-8">
           <Image
             height={246}
