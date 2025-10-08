@@ -1,4 +1,6 @@
 // types/blog.ts
+import type { StaticImport } from "next/dist/shared/lib/get-img-props";
+
 export interface Tag {
   label: string;
   bgColor: string;
@@ -19,6 +21,7 @@ export interface BlogPost {
   tags: Tag[];
 
 }
+
 
 
 
