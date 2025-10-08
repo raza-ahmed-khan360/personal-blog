@@ -17,7 +17,7 @@ interface BlogPost {
 
 function AllBlogs() {
   const blogPosts: BlogPost[] = [
-    post
+    [post]
   ];
 
   return (
@@ -74,5 +74,6 @@ function AllBlogs() {
     </div>
   );
 }
+
 
 export default AllBlogs;
