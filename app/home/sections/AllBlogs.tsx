@@ -5,15 +5,8 @@ import { BlogPost } from "../../types/blog";
 import { Tag } from "../../types/blog";
 import { getAllPosts } from "../../utils/blog";
 
-<<<<<<< HEAD
-// Use the BlogPost type from types/blog
-
-function AllBlogs() {
-  const blogPosts = getAllPosts().slice(0, 3);
-=======
 function AllBlogs() {
   const blogPosts: BlogPost[] = post;
->>>>>>> 8c59f192b1c35abc584ec6d68c90d59ebdbd2fc4
 
   return (
     <div className="py-10 bg-white flex flex-col items-center gap-12">
