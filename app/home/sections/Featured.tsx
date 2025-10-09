@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 const Featured = () => {
@@ -62,5 +63,6 @@ const Featured = () => {
 };
 
 export default Featured;
+
 
 
