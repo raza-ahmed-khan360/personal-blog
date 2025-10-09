@@ -18,19 +18,23 @@ const Featured = () => {
     <div className="h-auto py-8 bg-white flex flex-col justify-start items-center gap-12">
       <div className="w-full px-8 flex flex-col gap-6">
       <h2 className="text-3xl font-bold text-gray-900 text-left">Featured blog</h2>
-        <div className="flex flex-wrap items-start gap-8">
+        <Link
+          href={`/post/${featuredPost.slug}`}
+          className="flex flex-wrap items-start gap-8 group"
+        >
           <Image
             height={246}
             width={592}
-            className="h-[246px] w-full max-w-[592px] rounded-lg object-cover"
+            className="h-[246px] w-full max-w-[592px] rounded-lg object-cover transition-transform duration-300 group-hover:scale-105"
             src={featuredPost.image}
             alt={featuredPost.title}
           />
+
           <div className="flex-1 flex flex-col gap-4">
             <div className="text-sm font-semibold text-gray-600">
               {featuredPost.author} • {featuredPost.date}
             </div>
-            <h2 className="text-2xl font-semibold text-gray-900 leading-snug">
+            <h2 className="text-2xl font-semibold text-gray-900 leading-snug group-hover:text-purple-600 transition-colors">
               {featuredPost.title}
             </h2>
             <p className="text-base text-gray-600 leading-relaxed">
@@ -51,11 +55,12 @@ const Featured = () => {
               ))}
             </div>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );
 };
 
 export default Featured;
+
 
