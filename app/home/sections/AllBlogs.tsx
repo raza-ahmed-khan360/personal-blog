@@ -6,7 +6,7 @@ import { Tag } from "../../types/blog";
 import { getAllPosts } from "../../utils/blog";
 
 function AllBlogs() {
-  const blogPosts: BlogPost[] = post;
+  const blogPosts: BlogPost[] = getAllPosts().slice(0, 3);;
 
   return (
     <div className="py-10 bg-white flex flex-col items-center gap-12">
