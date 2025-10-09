@@ -1,5 +1,5 @@
 // types/blog.ts
-import type { StaticImport } from "next/dist/shared/lib/get-img-props";
+// import type { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 export interface Tag {
   label: string;
@@ -16,11 +16,12 @@ export interface BlogPost {
   description: string;
   excerpt?: string;
   content?: string;
-  image: string | StaticImport;
-  coverImage: string | StaticImport;
+  image: string;
+  coverImage: string;
   tags: Tag[];
 
 }
+
 
 
 
