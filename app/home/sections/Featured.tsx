@@ -7,7 +7,7 @@ const Featured = () => {
     title: "Grid system for better Design User Interface",
     description:
       "A grid system is a design tool used to arrange content on a webpage. It is a series of vertical and horizontal lines that create a matrix of intersecting points, which can be used to align and organize page elements. Grid systems are used to create a consistent look and feel across a website, and can help to make the layout more visually appealing and easier to navigate.",
-    image: "/Featured.png",
+    image: "/featured.png",
     tags: [
       { label: "Design", bgColor: "#f9f5ff", color: "#6840c6" },
       { label: "Interface", bgColor: "#fdf1f9", color: "#c01573" },
@@ -58,3 +58,4 @@ const Featured = () => {
 };
 
 export default Featured;
+
